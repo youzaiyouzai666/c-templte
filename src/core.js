@@ -26,8 +26,7 @@
         code.push('return r.join(\'\');');
         fn = new Function(code.join('\n'));//使代码字符串变可执行函数
         this.render = function (model) {
-            debugger;
-            return fn.apply(model);
+            return fn.apply(model);//model绑定到this变量上。
         };
     }
     window.cTemplate = Template;
