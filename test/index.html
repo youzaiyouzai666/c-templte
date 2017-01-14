@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="../src/core.js"></script>
 </head>
 <body>
 
+    <script id="tpl" type="text/plain">
+        <!--注释-->
+        <p>Today: { date }</p>
+        <a href="/{ user.id|safe }">{ user.company }</a>
+    </script>
+    <script>
+        var tpl = new cTemplate(document.getElementById('tpl').innerHTML);
+        var s = tpl.render({
+            date: 20150101,
+            user: {
+                id: 'A-000&001',
+                company: 'AT&T'
+            }
+        });
+        document.body.innerHTML = s;
+        console.log(s);
+    </script>
 </body>
 </html>
