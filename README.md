@@ -10,6 +10,7 @@
             <p>Today: { date }</p>
             <a href="/{ user.id|safe }">{ user.company }</a>
     </script>
+    { user.id|safe }中“|safe” 表示不进行转义
 
 ### 渲染模板
 
